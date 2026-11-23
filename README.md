@@ -1,8 +1,14 @@
+<div align="center">
+
+![garak Banner](assets/banner.svg)
+
 # garak, LLM vulnerability scanner
 
 *Generative AI Red-teaming & Assessment Kit*
 
 Maintained & Curated by **[Rauf](https://github.com/raufzen)**.
+
+</div>
 
 `garak` checks if an LLM-backed application can be made to fail in a way we don't want. `garak` probes for hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreaks, and many other weaknesses. If you know `nmap` or `msf` / Metasploit Framework, garak does somewhat similar things to them, but for LLMs.
 
