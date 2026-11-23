@@ -2,7 +2,7 @@
 
 *Generative AI Red-teaming & Assessment Kit*
 
-Maintained & Curated by **[Rauf](https://github.com/mansoorwanimansoorwani23-collab)**.
+Maintained & Curated by **[Rauf](https://github.com/raufzen)**.
 
 `garak` checks if an LLM-backed application can be made to fail in a way we don't want. `garak` probes for hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreaks, and many other weaknesses. If you know `nmap` or `msf` / Metasploit Framework, garak does somewhat similar things to them, but for LLMs.
 
@@ -11,9 +11,9 @@ Maintained & Curated by **[Rauf](https://github.com/mansoorwanimansoorwani23-col
 `garak`'s a free tool. We love developing it and are always interested in adding functionality to support applications. 
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Tests/Linux](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_linux.yml/badge.svg)](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_linux.yml)
-[![Tests/Windows](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_windows.yml/badge.svg)](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_windows.yml)
-[![Tests/OSX](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_macos.yml/badge.svg)](https://github.com/mansoorwanimansoorwani23-collab/garak/actions/workflows/test_macos.yml)
+[![Tests/Linux](https://github.com/raufzen/garak/actions/workflows/test_linux.yml/badge.svg)](https://github.com/raufzen/garak/actions/workflows/test_linux.yml)
+[![Tests/Windows](https://github.com/raufzen/garak/actions/workflows/test_windows.yml/badge.svg)](https://github.com/raufzen/garak/actions/workflows/test_windows.yml)
+[![Tests/OSX](https://github.com/raufzen/garak/actions/workflows/test_macos.yml/badge.svg)](https://github.com/raufzen/garak/actions/workflows/test_macos.yml)
 [![Documentation Status](https://readthedocs.org/projects/garak/badge/?version=latest)](http://garak.readthedocs.io/en/latest/?badge=latest)
 [![arXiv](https://img.shields.io/badge/cs.CL-arXiv%3A2406.11036-b31b1b.svg)](https://arxiv.org/abs/2406.11036)
 [![discord-img](https://img.shields.io/badge/chat-on%20discord-yellow.svg)](https://discord.gg/uVch4puUCs)
@@ -62,7 +62,7 @@ python -m pip install -U garak
 The standard pip version of `garak` is updated periodically. To get a fresher version from GitHub, try:
 
 ```
-python -m pip install -U git+https://github.com/mansoorwanimansoorwani23-collab/garak.git@main
+python -m pip install -U git+https://github.com/raufzen/garak.git@main
 ```
 
 ### Clone from source
@@ -72,7 +72,7 @@ python -m pip install -U git+https://github.com/mansoorwanimansoorwani23-collab/
 ```
 conda create --name garak "python>=3.11,<=3.14"
 conda activate garak
-gh repo clone mansoorwanimansoorwani23-collab/garak
+gh repo clone raufzen/garak
 cd garak
 python -m pip install -e .
 ```
@@ -298,7 +298,7 @@ Larger artefacts, like model files and bigger corpora, are kept out of the repos
 
 ## FAQ
 
-We have an FAQ [here](https://github.com/mansoorwanimansoorwani23-collab/garak/blob/main/FAQ.md). Reach out if you have any more questions!
+We have an FAQ [here](https://github.com/raufzen/garak/blob/main/FAQ.md). Reach out if you have any more questions!
 
 Code reference documentation is at [garak.readthedocs.io](https://garak.readthedocs.io/en/latest/).
 
