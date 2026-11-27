@@ -236,8 +236,8 @@ dra = [
   "detoxify>=0.5.0"
 ]
 [project.urls]
-"Homepage" = "https://github.com/raufzen/garak"
-"Bug Tracker" = "https://github.com/raufzen/garak/issues"
+"Homepage" = "https://github.com/NVIDIA/garak"
+"Bug Tracker" = "https://github.com/NVIDIA/garak/issues"
 
 [project.scripts]
 garak = "garak.__main__:main"

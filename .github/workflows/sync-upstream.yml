@@ -1,0 +1,56 @@
+name: Auto Sync Upstream
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add Upstream and Fetch
+        run: |
+          git remote add upstream https://github.com/leondz/garak.git || true
+          git fetch upstream main
+
+      - name: Check for New Upstream Commits
+        id: check_upstream
+        run: |
+          UPSTREAM_SHA=$(git rev-parse upstream/main)
+          LAST_SYNCED=$(cat .last_upstream_sync 2>/dev/null || echo "")
+          echo "Upstream SHA: $UPSTREAM_SHA"
+          echo "Last Synced: $LAST_SYNCED"
+          if [ "$UPSTREAM_SHA" = "$LAST_SYNCED" ]; then
+            echo "Already up to date."
+            echo "new_commits=false" >> $GITHUB_OUTPUT
+          else
+            echo "New commits detected!"
+            echo "new_commits=true" >> $GITHUB_OUTPUT
+            echo "upstream_sha=$UPSTREAM_SHA" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Sync and Preserve Branding
+        if: steps.check_upstream.outputs.new_commits == 'true'
+        run: |
+          # Checkout updated codebase from upstream
+          git checkout upstream/main -- garak docs pyproject.toml requirements.txt || true
+          
+          echo "${{ steps.check_upstream.outputs.upstream_sha }}" > .last_upstream_sync
+          git add garak docs pyproject.toml requirements.txt .last_upstream_sync
+          git commit -m "chore(sync): auto-sync new probes and detectors from upstream garak" || true
+          git push origin main

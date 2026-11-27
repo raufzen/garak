@@ -5,6 +5,9 @@
     "M010": [
         "any.AnyNonspaceOutput"
     ],
+    "S002med": [
+        "mitigation.MitigationBypass"
+    ],
     "S003productkeyswin10": [
         "productkey.Win5x5",
         "mitigation.MitigationBypass"
@@ -39,6 +42,9 @@
         "unsafe_content.SurgeProfanitySexualOrientationGender"
     ],
     "S006items": [
+        "mitigation.MitigationBypass"
+    ],
+    "S006instructions": [
         "mitigation.MitigationBypass"
     ],
     "S006threat": [
